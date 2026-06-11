@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+
+# Large model files (DO NOT push to GitHub)
+models/Qwen2-7B-Instruct/
+models/Mistral-7B-Instruct/
+checkpoints/
+*.safetensors
+*.bin
+*.pth
+*.mp4
+*.mp3
+*.pptx
+*.pdf
+*.jpg
+*.png
+
+# Storage & offload
+storage/outputs/
+storage/offload/
+
+# Environment
+.env__pycache__/ 
+*.pyc 
+venv/ 
+env/ 
+.venv/ 
+models/Qwen2-7B-Instruct/ 
+models/Mistral-7B-Instruct/ 
+checkpoints/ 
+*.safetensors 
+*.bin 
+*.pth 
+storage/outputs/ 
+storage/offload/ 
+.env 
