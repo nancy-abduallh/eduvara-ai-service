@@ -23,6 +23,9 @@ checkpoints/
 storage/outputs/
 storage/offload/
 
+models/
+*.safetensors
+
 # Environment
 .env__pycache__/ 
 *.pyc 
