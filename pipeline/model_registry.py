@@ -12,6 +12,32 @@ from pathlib import Path
 
 import torch
 
+from huggingface_hub import snapshot_download
+import os
+
+def download_models_if_needed():
+    # Quiz model
+    quiz_path = "models/quiz-model"
+    if not os.path.exists(f"{quiz_path}/model.safetensors"):
+        os.makedirs(quiz_path, exist_ok=True)
+        snapshot_download(
+            repo_id="NancyAbdullah11/edugenie-models",
+            local_dir=quiz_path,
+            allow_patterns=["quiz-model/*"]
+        )
+
+    # Script adapter
+    adapter_path = "models/script-adapter"
+    if not os.path.exists(f"{adapter_path}/adapter_model.safetensors"):
+        os.makedirs(adapter_path, exist_ok=True)
+        snapshot_download(
+            repo_id="NancyAbdullah11/edugenie-models",
+            local_dir=adapter_path,
+            allow_patterns=["script-adapter/*"]
+        )
+
+download_models_if_needed()
+
 logger = logging.getLogger("edugenie.registry")
 
 _lock = threading.Lock()
